@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="10dp" /> <!-- Mengatur sudut gambar melengkung dengan radius tertentu -->
+    <solid android:color="#FF0000" /> <!-- Mengatur warna latar belakang gambar -->
+</shape>
+
+<!--<selector-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<!--</selector>-->

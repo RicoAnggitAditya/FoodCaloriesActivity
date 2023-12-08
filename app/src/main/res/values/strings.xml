@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Calories App</string>
+    <string name="btn_string_schedule">Schedule</string>
+    <string name="btn_string_home">Home</string>
+    <string name="btn_string_cal">Calories</string>
+    <string name="btn_exit">Exit</string>
+    <string name="btn_save">Save</string>
+    <string-array name="judul_lat_array">
+        <item>Push Up Beginner</item>
+        <item>Sit Up Beginner</item>
+        <item>Squats Beginner</item>
+        <item>Jumping Jaks Beginner</item>
+        <item>Push Up Intermediate</item>
+        <item>Sit Up Intermediate</item>
+        <item>Squats Intermediate</item>
+        <item>Jumping Jaks Intermediate</item>
+        <item>Push Up Pro</item>
+        <item>Sit Up Pro</item>
+        <item>Squats Pro</item>
+        <item>Jumping Jaks Pro</item>
+    </string-array>
+
+
+</resources>
