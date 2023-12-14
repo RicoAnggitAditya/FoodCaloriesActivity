@@ -15,24 +15,28 @@
         android:theme="@style/Theme.CasptoneWorkout"
         tools:targetApi="31">
         <activity
-            android:name=".FoodCaloriesDetailActivity"
+            android:name=".HomePageDetailActivity"
             android:exported="false" />
+
         <activity
-            android:name=".ScheduleActivity"
-            android:exported="false"></activity>
-        <activity
-            android:name=".FoodCaloriesActivity"
+            android:name=".HomePageActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan">>
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".Addschedulee"
+            android:name=".FoodCaloriesDetailActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".FoodCaloriesActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

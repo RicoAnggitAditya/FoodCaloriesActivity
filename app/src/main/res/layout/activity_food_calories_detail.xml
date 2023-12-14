@@ -10,14 +10,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="40dp"
         android:text="Salad Sayur"
+        android:fontFamily=""
         android:textColor="@color/white"
-        android:textSize="38sp"
+        android:textSize="32dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
 
@@ -25,8 +26,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/detail_img"
-        android:layout_width="220dp"
-        android:layout_height="150dp"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +47,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/total_cal"
         android:layout_width="150dp"
-        android:layout_height="131dp"
+        android:layout_height="125dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="50dp"
@@ -83,7 +84,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_protein"
         android:layout_width="150dp"
-        android:layout_height="131dp"
+        android:layout_height="125dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="50dp"
@@ -122,7 +123,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_lemak"
         android:layout_width="150dp"
-        android:layout_height="131dp"
+        android:layout_height="125dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="50dp"
@@ -161,7 +162,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_karb"
         android:layout_width="150dp"
-        android:layout_height="131dp"
+        android:layout_height="125dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="50dp"

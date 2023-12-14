@@ -59,14 +59,6 @@ public class FoodCaloriesActivity extends AppCompatActivity {
         // Menyiapkan RecyclerView
         setUpRv(collectionReference);
 
-        // Menyiapkan onClickListener untuk tombol "scheduleBtn"
-        binding.scheduleBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Tempat penampungan untuk fungsionalitas di masa depan
-                Toast.makeText(FoodCaloriesActivity.this, "Pindah halaman ke schedule", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         // Menyiapkan onClickListener untuk tombol "btnSearch"
         binding.btnSearch.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +71,22 @@ public class FoodCaloriesActivity extends AppCompatActivity {
                 searchFood(query);
             }
         });
+
+        // Menyiapkan onClickListener untuk tombol atau elemen UI di ActivityFoodCalories
+        binding.newsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Membuat Intent untuk membuka ActivityHomePage
+                Intent intent = new Intent(FoodCaloriesActivity.this, HomePageActivity.class);
+
+                // Memulai aktivitas tanpa animasi transisi
+                startActivity(intent);
+
+                // Memberikan kesan pindah halaman instan tanpa animasi tambahan
+                overridePendingTransition(0, 0);
+            }
+        });
+
     }
 
     // Fungsi untuk menyiapkan RecyclerView
