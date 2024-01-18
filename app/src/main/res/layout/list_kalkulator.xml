@@ -10,7 +10,7 @@
     android:layout_marginRight="10dp"
     android:layout_marginTop="5dp"
     android:background="@drawable/bg_listfoodcalories"
-    android:id="@+id/card"
+    android:id="@+id/keranjang"
     >
 
     <androidx.cardview.widget.CardView
@@ -67,22 +67,53 @@
 
         />
 
-    <Button
-        android:id="@+id/Btn_addcal"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:padding="0dp"
+        android:layout_height="25dp"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/TotalCalories"
-        android:textSize="15dp"
-        android:text="Calculate"
-        android:background="@drawable/bg_detail"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/keranjang"
+        >
+
+        <ImageView
+            android:id="@+id/button_kurang"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/minus"
+            android:paddingStart="10dp"
+            android:paddingEnd="5dp"
+            />
+
+        <TextView
+            android:id="@+id/jumlahpesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="0"
+            android:paddingHorizontal="8dp"
+            android:layout_marginTop="1.5dp"
 
 
-        />
+            />
+
+        <ImageView
+            android:id="@+id/button_tambah"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/plus"
+            android:paddingStart="5dp"
+            android:paddingEnd="10dp"
+            />
+    </LinearLayout>
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

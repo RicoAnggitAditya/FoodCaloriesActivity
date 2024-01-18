@@ -6,7 +6,7 @@
         android:elevation="10dp">
     </solid>
     <corners
-        android:topLeftRadius="20dp"
-        android:topRightRadius="20dp"
+        android:topLeftRadius="15dp"
+        android:topRightRadius="15dp"
         />
 </shape>

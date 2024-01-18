@@ -5,20 +5,17 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.casptoneworkout.databinding.ActivityFoodcaloriesBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -42,7 +39,6 @@ public class FoodCaloriesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Menginflasikan layout menggunakan view binding
         binding = ActivityFoodcaloriesBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
@@ -59,7 +55,6 @@ public class FoodCaloriesActivity extends AppCompatActivity {
         // Menyiapkan RecyclerView
         setUpRv(collectionReference);
 
-
         // Menyiapkan onClickListener untuk tombol "btnSearch"
         binding.btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +66,7 @@ public class FoodCaloriesActivity extends AppCompatActivity {
                 searchFood(query);
             }
         });
+
 
         // Menyiapkan onClickListener untuk tombol atau elemen UI di ActivityFoodCalories
         binding.newsBtn.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +83,20 @@ public class FoodCaloriesActivity extends AppCompatActivity {
             }
         });
 
+        // Menyiapkan onClickListener untuk tombol "hitung"
+        binding.hitung.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Membuat Intent untuk membuka Activity_hitung_calories
+                Intent intent = new Intent(FoodCaloriesActivity.this, Activity_hitung_calories.class);
+
+                // Memulai aktivitas tanpa animasi transisi
+                startActivity(intent);
+
+                // Memberikan kesan pindah halaman instan tanpa animasi tambahan
+                overridePendingTransition(0, 0);
+            }
+        });
     }
 
     // Fungsi untuk menyiapkan RecyclerView
@@ -143,7 +153,10 @@ public class FoodCaloriesActivity extends AppCompatActivity {
                         (String) data.get("protein"),
                         (String) data.get("lemak"),
                         (String) data.get("karb"),
-                        (String) data.get("description")
+                        (String) data.get("description"),
+                        (Boolean) data.get("kalkulator"),
+                        (Long) data.get("count")
+
                 );
 
                 // Mencatat nama item makanan
@@ -168,17 +181,15 @@ public class FoodCaloriesActivity extends AppCompatActivity {
     }
 
     // Fungsi untuk menangani peristiwa klik item di RecyclerView
-    private FoodAdapter.OnItemClickListener onClicked = new FoodAdapter.OnItemClickListener() {
-        @Override
-        public void onClicked(FoodData food) {
-            // Membuat Intent untuk navigasi ke FoodCaloriesDetailActivity
-            Intent intent = new Intent(FoodCaloriesActivity.this, FoodCaloriesDetailActivity.class);
-            // Meneruskan objek FoodData yang dipilih ke aktivitas detail
-            intent.putExtra("FOOD_DATA", food);
-            // Memulai aktivitas detail
-            startActivity(intent);
-        }
+    private FoodAdapter.OnItemClickListener onClicked = food -> {
+        // Membuat Intent untuk navigasi ke FoodCaloriesDetailActivity
+        Intent intent = new Intent(FoodCaloriesActivity.this, FoodCaloriesDetailActivity.class);
+        // Meneruskan objek FoodData yang dipilih ke aktivitas detail
+        intent.putExtra("FOOD_DATA", food);
+        // Memulai aktivitas detail
+        startActivity(intent);
     };
+
 
     // Fungsi untuk melakukan pencarian berdasarkan query yang diberikan
     private void searchFood(String query) {

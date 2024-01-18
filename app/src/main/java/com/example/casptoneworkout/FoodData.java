@@ -15,6 +15,19 @@ public class FoodData implements Serializable {
     private String lemak;
     private String karb;
     private String description;
+    private Boolean kalkulator;
+    private Long count;
+
+    public void incrementCount() {
+        count++;
+    }
+
+    public void decrementCount() {
+        if (count > 0) {
+            count--;
+        }
+    }
+
 
     /**
      * Konstruktor untuk membuat objek FoodData.
@@ -28,7 +41,7 @@ public class FoodData implements Serializable {
      * @param karb           Jumlah karbohidrat.
      * @param description    Deskripsi makanan.
      */
-    public FoodData(String id, String namaMakanan, String img, String totalCalories, String protein, String lemak, String karb, String description) {
+    public FoodData(String id, String namaMakanan, String img, String totalCalories, String protein, String lemak, String karb, String description, Boolean kalkulator, Long count) {
         this.id = id;
         this.namaMakanan = namaMakanan;
         this.img = img;
@@ -37,6 +50,8 @@ public class FoodData implements Serializable {
         this.lemak = lemak;
         this.karb = karb;
         this.description = description;
+        this.kalkulator = kalkulator;
+        this.count = count;
     }
 
     /**
@@ -110,6 +125,16 @@ public class FoodData implements Serializable {
     public String getDescription() {
         return description;
     }
+
+    public Boolean getKalkulator() {
+        return kalkulator;
+    }
+
+    public Long getCount() {return count;}
+
+    public void setCount(Long num) { this.count = num;}
+
+
 
     /**
      * Metode untuk memeriksa kesetaraan dua objek FoodData.
